@@ -1,5 +1,7 @@
 FROM python:3.9-slim
-
+###############################################
+# Set envs
+###############################################
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PIP_NO_CACHE_DIR=off \
