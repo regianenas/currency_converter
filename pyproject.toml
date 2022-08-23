@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "pythondjangoproject"
 version = "0.1.0"
-description = ""
+description = "Django Rest Framework app to currency converte"
 authors = ["Regiane <nascire@gmail.com>"]
 
 [tool.poetry.dependencies]
