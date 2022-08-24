@@ -19,9 +19,9 @@ from converter import views
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('products/', views.get_create_product, name='products'),
-    path('products/<str:name>', views.get_update_or_delete_prices_per_product, name='products'),
+    path("admin/", admin.site.urls),
+    path("products/", views.get_create_product, name="products"),
+    path("products/<str:name>", views.get_update_or_delete_prices_per_product, name="products"),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
