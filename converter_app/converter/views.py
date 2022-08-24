@@ -1,5 +1,3 @@
-from typing import Union
-
 from converter.models import Product
 from converter.serializers import ProductSerializer
 from rest_framework.decorators import api_view
@@ -40,7 +38,7 @@ def get_update_or_delete_prices_per_product(
 
 
 @api_view(["POST", "GET"])
-def get_create_product(request: Request) -> Union[Response, PageNumberPagination]:
+def get_create_product(request: Request) -> Response:
     """
     API endpoint that allows to get or create a product and prices.
     """
