@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-import os
+from os import getenv
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -78,10 +78,11 @@ WSGI_APPLICATION = 'converter_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'NAME': os.environ.get('POSTGRES_NAME'),
-        'USER': os.environ.get('POSTGRES_USER'),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': os.environ.get('POSTGRES_HOST'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': getenv('POSTGRES_NAME', 'postgres'),
+        'USER': getenv('POSTGRES_USER', 'postgres'),
+        'PASSWORD': getenv('POSTGRES_PASSWORD', 'postgres'),
+        'HOST': getenv('POSTGRES_HOST', '127.0.0.1'),
         'PORT': 5432,
     }
 }
