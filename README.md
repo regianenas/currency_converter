@@ -1,10 +1,11 @@
-# Price Converter API
-Repository for Django and Rest Framework api to Create, Read, Update and Delete products
-from a database. 
-It uses Django version 4.1 and Rest Framework version 3.13.1. PostgresSQL (CHECAR ESSA INFORMÇÃO) 
+# Currency Converter API
+Repository for Django and Rest Framework API to Create, Read, Update and Delete products
+from a database.
+It uses Django version 4.1, Rest Framework version 3.13.1 and PostgresSQL version 2.9.3
 is set as database.
 
-# Project Structure
+## Project Structure
+
 ```
 ├── converter_app/
 │     - Django manager
@@ -15,10 +16,10 @@ is set as database.
 │     - Django settings files
 │   └── tests/
 │     - Unit and Integrations tests 
-├── requirements/ (ESSA PASTA PODE SUMIR)
-│  ( COLOCAR COISAS DO DOCKER AQUI TALVEZ)
-└--- README.md
+└── README.md, Dockerfile, docker-compose, and project config.
 ```
+
+# API
 
 ## Methods
 API requests must follow the schema:
@@ -41,32 +42,34 @@ API requests must follow the schema:
 | `404`       | Searched product not found.                                       |
 
 # Development Overview
-The default development is used to proces requests.
+The default development used to proces requests.
 
 ![img.png](img.png)
 
 # Running
-In order to use the API, first one needs initiate all containers with docker-compose:
+In order to use the API, after clone this project, one needs to initiate all containers
+with docker-compose:
 ```
 docker-compose up -d
 ```
-After that it is necessary create migrates in the database, for that open a bash 
-instance on your container calling ./bash.sh on the root of this project.
+After that, it is necessary to create migrates in the database. For that open a bash
+instance on your container calling ./bash.sh on the root of this project using
+the following commands:
 ```
 docker-compose run web_app bash
 cd converter_app
 python manage.py makemigrations 
 python manage.py migrate
 ```
-For use Django admin dependencies one needs register a user, still at the bash instance,
-run the createsuperuser and provide a username, email and password.
+To use Django admin dependencies one needs to register a user, still inside the bash
+instance, run the createsuperuser and provide a username, email, and password.
 ```
 python manage.py createsuperuser
 ```
-Docker file contain the application and all container dependencies is already called docker-compose.yml.
-Once application is up, one can use the url (local and in production) to use API.
+Dockerfile contains the application and all container dependencies is already called in docker-compose.yml.
+Once application is up, one can use the url (local or in production) to use API.
 
-Example to get all products
+Example to get all products:
 ```
 localhost:8000/products
 ```
@@ -102,12 +105,13 @@ Example to create one product:
 ```
 
 # Tests
-To run a tests, first open the app directory as is shown below: 
+To run a specific test, still inside the bash instance, open the app directory as is
+shown below:
 ```
 cd converter_app
 poetry run pytest tests/test_api.py
 ```
-Run all tests
+Running all tests:
 ```
 cd converter_app
 poetry run pytest tests/
