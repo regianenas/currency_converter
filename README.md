@@ -41,6 +41,9 @@ API requests must follow the schema:
 | `400`       | Validation errors or the fields entered do not exist in database. |                                                        |
 | `404`       | Searched product not found.                                       |
 
+**Note**: As an example for local test, one can find in the directory postman-collection a json file
+that can be used to test all methods in Postman.
+
 # Development Overview
 The default development used to proces requests.
 

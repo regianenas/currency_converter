@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "9ed5699c-2fa1-486a-84cb-6041840fc905",
+		"name": "API_tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17690797"
+	},
+	"item": [
+		{
+			"name": "Get only one product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/products/Tenis nike",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						"Tenis nike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Tenis nike\",\n    \"prices\": [\n        {\n            \"slug_code\": \"BRL\",\n            \"value\": \"529.99\",\n            \"currency_country\": \"Brazil\"\n        },\n        {\n            \"slug_code\": \"USD\",\n            \"value\": \"98.23\",\n            \"currency_country\": \"United States\"\n        },\n        {\n            \"slug_code\": \"EUR\",\n            \"value\": \"83.26\",\n            \"currency_country\": \"Countries European Union\"\n        },\n        {\n            \"slug_code\": \"INR\",\n            \"value\": \"7318.93\",\n            \"currency_country\": \"India\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Tenis nike\",\n    \"prices\": [\n        {\n            \"slug_code\": \"BRL\",\n            \"value\": \"600.85\",\n            \"currency_country\": \"Brazil\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/products/Tenis nike",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						"Tenis nike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/products/Tenis nike",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						"Tenis nike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
