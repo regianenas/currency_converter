@@ -17,6 +17,11 @@ pytest-django = "^4.5.2"
 black = "^22.6.0"
 flake8 = "^5.0.4"
 
+[tool.black]
+line-length = 99
+target-version = ['py37']
+include = '\.pyi?$'
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
