@@ -4,6 +4,8 @@ from a database.
 It uses Django version 4.1, Rest Framework version 3.13.1 and PostgresSQL version 2.9.3 
 is set as database.
 
+**Note:** This project was create in PyCharm 2022.2.1 and with Docker version 20.10.14.
+
 ## Project Structure
 
 ```
