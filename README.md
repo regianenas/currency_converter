@@ -13,9 +13,9 @@ is set as database.
 │     - Django manager
 │   ├── converter/
 │        └── migrations/
-│     -  Django main files (admin, apps, models, views, serializers)
+│     -  Django app main files (admin, apps, models, views, urls, serializers)
 │   ├── converter_app/
-│     - Django settings files
+│     - Django project settings files
 │   └── tests/
 │     - Unit and Integrations tests 
 └── README.md, Dockerfile, docker-compose, and project config.
