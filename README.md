@@ -1,7 +1,7 @@
 # Currency Converter API
 Repository for Django and Rest Framework API to Create, Read, Update and Delete products
 from a database.
-It uses Django version 4.1, Rest Framework version 3.13.1 and PostgresSQL version 2.9.3 
+It uses Django version 4.1, Rest Framework version 3.13.1 and PostgresSQL version 14.1 
 is set as database.
 
 **Note:** This project was create in PyCharm 2022.2.1 and with Docker version 20.10.14.
@@ -13,7 +13,7 @@ is set as database.
 │     - Django manager
 │   ├── converter/
 │        └── migrations/
-│     -  Django main files (admin, apps, models, views, serializers) 
+│     -  Django main files (admin, apps, models, views, serializers)
 │   ├── converter_app/
 │     - Django settings files
 │   └── tests/
@@ -26,12 +26,12 @@ is set as database.
 ## Methods
 API requests must follow the schema:
 
-| Method  | Description                               |
-|----------|------------------------------------------|
-| `GET`    | Returns prices for one or more products. |
-| `POST`   | Create a new product.                    |
-| `PUT`    | Update prices for a given product.       |
-| `DELETE` | Remove a product from the system.        |
+| Method  | Description                               | url                                            |
+|----------|------------------------------------------|------------------------------------------------| 
+| `GET`    | Returns prices for one or more products. | `/products/<str: product name>` or `/products` |
+| `POST`   | Create a new product.                    | `/products/`                                   |
+| `PUT`    | Update prices for a given product.       | `/products/<str: product name>`                |
+| `DELETE` | Remove a product from the system.        | `/products/<str: product name>`                |
 
 ## Responses
 
