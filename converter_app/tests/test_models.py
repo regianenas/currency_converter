@@ -90,3 +90,16 @@ def test_create_prices(
         assert price.value in prices_json_map["value"]
         assert price.create_date == current_date
         assert price.update_date == current_date
+
+
+@pytest.mark.django_db
+def test_not_create_product_with_repeated_slug_code(
+    product_payload, repeated_prices_payload, product_factory
+):
+    """
+    Raise an Integrity error when try to create a Product with repeated slug code or country.
+    """
+    product = product_factory.create(**product_payload)
+    with pytest.raises(IntegrityError):
+        for price in repeated_prices_payload:
+            Prices.objects.create(product=product, **price)

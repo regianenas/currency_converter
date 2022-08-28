@@ -21,6 +21,9 @@ class Prices(models.Model):
     The Prices object contains all prices in each currency for a registered product.
     """
 
+    class Meta:
+        unique_together = [("product", "currency_country", "slug_code")]
+
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="prices")
     slug_code = models.SlugField()
     currency_country = models.CharField(max_length=255)
