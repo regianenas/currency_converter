@@ -44,7 +44,7 @@ def get_update_or_delete_prices_per_product(
 
 
 @api_view(["POST", "GET"])
-def get_create_product(request: Request) -> Response:
+def get_or_create_product(request: Request) -> Response:
     """
     API endpoint that allows to get or create a product and prices.
     """
