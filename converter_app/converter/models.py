@@ -9,7 +9,7 @@ class Product(models.Model):
 
     name = models.CharField(max_length=255, unique=True)
     description = models.TextField(null=True, blank=True)
-    create_date = models.DateTimeField(default=timezone.now())
+    create_date = models.DateTimeField(default=timezone.now)
     update_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
@@ -22,13 +22,13 @@ class Prices(models.Model):
     """
 
     class Meta:
-        unique_together = [("product", "currency_country", "slug_code")]
+        unique_together = [("product", "slug_code")]
 
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="prices")
     slug_code = models.SlugField()
     currency_country = models.CharField(max_length=255)
     value = models.DecimalField(decimal_places=2, max_digits=10)
-    create_date = models.DateTimeField(default=timezone.now())
+    create_date = models.DateTimeField(default=timezone.now)
     update_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
