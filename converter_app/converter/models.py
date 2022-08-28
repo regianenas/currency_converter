@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Product(models.Model):
@@ -8,6 +9,8 @@ class Product(models.Model):
 
     name = models.CharField(max_length=255, unique=True)
     description = models.TextField(null=True, blank=True)
+    create_date = models.DateTimeField(default=timezone.now())
+    update_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
@@ -22,6 +25,8 @@ class Prices(models.Model):
     slug_code = models.SlugField()
     currency_country = models.CharField(max_length=255)
     value = models.DecimalField(decimal_places=2, max_digits=10)
+    create_date = models.DateTimeField(default=timezone.now())
+    update_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.slug_code
