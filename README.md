@@ -57,13 +57,12 @@ with docker-compose:
 ```
 docker-compose up -d
 ```
-After that, it is necessary to create migrates in the database. For that open a bash
+After that, it is necessary to apply migrates in the database. For that open a bash
 instance on your container calling ./bash.sh on the root of this project using
 the following commands:
 ```
 docker-compose run web_app bash
 cd converter_app
-python manage.py makemigrations 
 python manage.py migrate
 ```
 To use Django admin dependencies one needs to register a user, still inside the bash 
