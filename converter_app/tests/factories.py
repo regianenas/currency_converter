@@ -25,7 +25,6 @@ class PricesFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Prices
 
-    # product = ProductFactory.build()
     product = factory.SubFactory(ProductFactory)
     slug_code = fake.slug()
     currency_country = factory.Faker("country")
